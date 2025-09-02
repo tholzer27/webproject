@@ -17,7 +17,7 @@ jobs:
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '8.2' # gleiche Version wie lokal nutzen!
+          php-version: '8.3.25'
           extensions: mbstring, bcmath, intl, pdo_sqlite, pdo_mysql
           tools: composer
 
