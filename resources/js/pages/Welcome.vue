@@ -61,7 +61,7 @@ import { Head, Link } from '@inertiajs/vue3';
                                     target="_blank"
                                     class="ml-1 inline-flex items-center space-x-1 font-medium text-[#f53003] underline underline-offset-4 dark:text-[#FF4433]"
                                 >
-                                    <span>Documentation</span>
+                                    <span>Documentation Test</span>
                                     <svg
                                         width="{10}"
                                         height="{11}"
