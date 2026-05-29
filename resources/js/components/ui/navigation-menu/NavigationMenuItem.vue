@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 import { reactiveOmit } from '@vueuse/core'
 import { NavigationMenuItem, type NavigationMenuItemProps } from 'reka-ui'
 
-const props = defineProps<NavigationMenuItemProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps</* @vue-ignore */ NavigationMenuItemProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = reactiveOmit(props, 'class')
 </script>

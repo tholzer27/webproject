@@ -35,4 +35,8 @@ return [
         ],
     ],
 
+    'stripe' => [
+        'currency' => env('STRIPE_CURRENCY', env('CASHIER_CURRENCY', 'chf')),
+    ],
+
 ];

@@ -10,12 +10,12 @@ import {
 import { computed, type HTMLAttributes } from 'vue'
 
 const props = withDefaults(
-  defineProps<DropdownMenuContentProps & { class?: HTMLAttributes['class'] }>(),
+  defineProps</* @vue-ignore */ DropdownMenuContentProps & { class?: HTMLAttributes['class'] }>(),
   {
     sideOffset: 4,
   },
 )
-const emits = defineEmits<DropdownMenuContentEmits>()
+const emits = defineEmits</* @vue-ignore */ DropdownMenuContentEmits>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

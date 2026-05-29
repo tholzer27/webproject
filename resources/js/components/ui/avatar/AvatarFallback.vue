@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { AvatarFallback, type AvatarFallbackProps } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<AvatarFallbackProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps</* @vue-ignore */ AvatarFallbackProps & { class?: HTMLAttributes['class'] }>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

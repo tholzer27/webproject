@@ -9,7 +9,7 @@ import {
   useForwardProps,
 } from 'reka-ui'
 
-const props = defineProps<DropdownMenuSubTriggerProps & { class?: HTMLAttributes['class'], inset?: boolean }>()
+const props = defineProps</* @vue-ignore */ DropdownMenuSubTriggerProps & { class?: HTMLAttributes['class'], inset?: boolean }>()
 
 const delegatedProps = reactiveOmit(props, 'class', 'inset')
 const forwardedProps = useForwardProps(delegatedProps)

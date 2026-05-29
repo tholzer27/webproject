@@ -6,8 +6,8 @@ import {
   useForwardPropsEmits,
 } from 'reka-ui'
 
-const props = defineProps<DropdownMenuRadioGroupProps>()
-const emits = defineEmits<DropdownMenuRadioGroupEmits>()
+const props = defineProps</* @vue-ignore */ DropdownMenuRadioGroupProps>()
+const emits = defineEmits</* @vue-ignore */ DropdownMenuRadioGroupEmits>()
 
 const forwarded = useForwardPropsEmits(props, emits)
 </script>

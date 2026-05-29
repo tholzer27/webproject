@@ -4,7 +4,7 @@ import type { HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 import { Primitive } from 'reka-ui'
 
-const props = defineProps<PrimitiveProps & {
+const props = defineProps</* @vue-ignore */ PrimitiveProps & {
   class?: HTMLAttributes['class']
 }>()
 </script>

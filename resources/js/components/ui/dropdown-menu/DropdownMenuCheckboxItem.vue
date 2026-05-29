@@ -10,8 +10,8 @@ import {
 } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<DropdownMenuCheckboxItemProps & { class?: HTMLAttributes['class'] }>()
-const emits = defineEmits<DropdownMenuCheckboxItemEmits>()
+const props = defineProps</* @vue-ignore */ DropdownMenuCheckboxItemProps & { class?: HTMLAttributes['class'] }>()
+const emits = defineEmits</* @vue-ignore */ DropdownMenuCheckboxItemEmits>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props

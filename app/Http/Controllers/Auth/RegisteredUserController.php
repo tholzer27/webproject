@@ -42,10 +42,23 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->accounts()->create([
+            'name' => 'Hauptkonto',
+            'currency' => 'CHF',
+        ]);
+
+        collect([
+            ['name' => 'Lohn', 'type' => 'income', 'color' => '#059669', 'icon' => 'Briefcase'],
+            ['name' => 'Freelancer', 'type' => 'income', 'color' => '#2563eb', 'icon' => 'Laptop'],
+            ['name' => 'Rechnungen', 'type' => 'income', 'color' => '#0ea5e9', 'icon' => 'ReceiptText'],
+            ['name' => 'Miete', 'type' => 'expense', 'color' => '#dc2626', 'icon' => 'Home'],
+            ['name' => 'Lebensmittel', 'type' => 'expense', 'color' => '#ea580c', 'icon' => 'ShoppingCart'],
+        ])->each(fn (array $category) => $user->categories()->create($category));
+
         event(new Registered($user));
 
         Auth::login($user);
 
-        return to_route('dashboard');
+        return redirect()->intended(route('dashboard', absolute: false));
     }
 }

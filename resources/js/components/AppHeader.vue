@@ -8,12 +8,17 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from '@/compon
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList, navigationMenuTriggerStyle } from '@/components/ui/navigation-menu';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
+import ThemeToggle from '@/components/ThemeToggle.vue';
 import UserMenuContent from '@/components/UserMenuContent.vue';
 import { getInitials } from '@/composables/useInitials';
-import { dashboard } from '@/routes';
+import { dashboard, reports } from '@/routes';
+import { index as categories } from '@/routes/categories';
+import { index as customers } from '@/routes/customers';
+import { index as invoices } from '@/routes/invoices';
+import { index as transactions } from '@/routes/transactions';
 import type { BreadcrumbItem, NavItem } from '@/types';
 import { InertiaLinkProps, Link, usePage } from '@inertiajs/vue3';
-import { BookOpen, Folder, LayoutGrid, Menu, Search } from 'lucide-vue-next';
+import { BarChart3, BookOpen, Folder, LayoutGrid, Menu, ReceiptText, Search, Tags, UsersRound } from 'lucide-vue-next';
 import { computed } from 'vue';
 
 interface Props {
@@ -40,16 +45,41 @@ const mainNavItems: NavItem[] = [
         href: dashboard(),
         icon: LayoutGrid,
     },
+    {
+        title: 'Transaktionen',
+        href: transactions(),
+        icon: ReceiptText,
+    },
+    {
+        title: 'Kategorien',
+        href: categories(),
+        icon: Tags,
+    },
+    {
+        title: 'Rechnungen',
+        href: invoices(),
+        icon: BookOpen,
+    },
+    {
+        title: 'Kunden',
+        href: customers(),
+        icon: UsersRound,
+    },
+    {
+        title: 'Reports',
+        href: reports(),
+        icon: BarChart3,
+    },
 ];
 
 const rightNavItems: NavItem[] = [
     {
-        title: 'Repository',
+        title: 'Export',
         href: 'https://github.com/laravel/vue-starter-kit',
         icon: Folder,
     },
     {
-        title: 'Documentation',
+        title: 'Hilfe',
         href: 'https://laravel.com/docs/starter-kits#vue',
         icon: BookOpen,
     },
@@ -58,7 +88,7 @@ const rightNavItems: NavItem[] = [
 
 <template>
     <div>
-        <div class="border-b border-sidebar-border/80">
+        <div class="border-b border-sidebar-border/80 bg-background text-foreground">
             <div class="mx-auto flex h-16 items-center px-4 md:max-w-7xl">
                 <!-- Mobile Menu -->
                 <div class="lg:hidden">
@@ -130,6 +160,8 @@ const rightNavItems: NavItem[] = [
                 </div>
 
                 <div class="ml-auto flex items-center space-x-2">
+                    <ThemeToggle />
+
                     <div class="relative flex items-center space-x-1">
                         <Button variant="ghost" size="icon" class="group h-9 w-9 cursor-pointer">
                             <Search class="size-5 opacity-80 group-hover:opacity-100" />

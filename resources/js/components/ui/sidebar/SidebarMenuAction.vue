@@ -3,7 +3,7 @@ import type { HTMLAttributes } from 'vue'
 import { cn } from '@/lib/utils'
 import { Primitive, type PrimitiveProps } from 'reka-ui'
 
-const props = withDefaults(defineProps<PrimitiveProps & {
+const props = withDefaults(defineProps</* @vue-ignore */ PrimitiveProps & {
   showOnHover?: boolean
   class?: HTMLAttributes['class']
 }>(), {

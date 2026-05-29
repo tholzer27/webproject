@@ -8,8 +8,8 @@ import {
 } from 'reka-ui'
 import { computed, type HTMLAttributes } from 'vue'
 
-const props = defineProps<NavigationMenuContentProps & { class?: HTMLAttributes['class'] }>()
-const emits = defineEmits<NavigationMenuContentEmits>()
+const props = defineProps</* @vue-ignore */ NavigationMenuContentProps & { class?: HTMLAttributes['class'] }>()
+const emits = defineEmits</* @vue-ignore */ NavigationMenuContentEmits>()
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props
