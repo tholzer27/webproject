@@ -2,8 +2,11 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "build:ssr": "vite build && vite build --ssr",
+        "build": "npm run vite:build",
+        "build:ssr": "npm run vite:build && npm run vite:build:ssr",
+        "vite:build": "PATH=/opt/plesk/php/8.3/bin:$PATH vite build",
+        "vite:build:ssr": "PATH=/opt/plesk/php/8.3/bin:$PATH vite build --ssr",
+
         "dev": "vite",
         "format": "prettier --write resources/",
         "format:check": "prettier --check resources/",
